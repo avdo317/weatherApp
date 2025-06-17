@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather app</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <div class="search">
+      <input type="text" id="searchInput" placeholder="Search by City Name">
+      <button id="searchButton">search</button>
+    </div>
+
+    <div class="info">
+      <p id="date"></p>
+      <h3 id="city">Novi Pazar</h3>
+    </div>
+
+    <div id="temp-img"></div>
+
+    <div id="description"></div>
+
+    <div id="temp"></div>
+
+    <div class="extra">
+      <div class="col">
+        <h5>highs</h5>
+        <p id="tempMax"></p>
+      </div>
+      <div class="col">
+        <h5>lows</h5>
+        <p id="tempMin"></p>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+
+</body>
+
+</html>
