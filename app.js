@@ -11,7 +11,7 @@ const months = ["January", "February", "March", "April", "May", "June",
 ];
 let dateObj = new Date();
 let month = months[dateObj.getUTCMonth()];
-let day = dateObj.getUTCDate() - 1;
+let day = dateObj.getUTCDate();
 let year = dateObj.getUTCFullYear();
 
 date.innerHTML = `${day}. ${month}. ${year}`;
