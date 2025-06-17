@@ -19,11 +19,7 @@ async function getWeather() {
   try {
     const cityName = document.getElementById('searchInput').value;
     const weatherData = await fetch
-      (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=e03b37fa6490c77bd8ba9fc061e935de`, {
-        headers: {
-          Accept: "application/json"
-        }
-      });
+      (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=e03b37fa6490c77bd8ba9fc061e935de`);
 
     const weatherD = await weatherData.json();
     console.log(weatherD);
