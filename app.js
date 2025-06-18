@@ -36,4 +36,7 @@ async function getWeather() {
 }
 
 document.getElementById('searchButton').addEventListener('click', getWeather);
+document.getElementById('searchInput').addEventListener('keydown', (e) => {
+  e.key === 'Enter' ? getWeather() : null;
+});
 
