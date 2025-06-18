@@ -13,11 +13,9 @@ let dateObj = new Date();
 let month = months[dateObj.getUTCMonth()];
 let day = dateObj.getUTCDate();
 let year = dateObj.getUTCFullYear();
-
 date.innerHTML = `${day}. ${month}. ${year}`;
-async function getWeather() {
+async function getWeather(cityName = "Novi Pazar") {
   try {
-    const cityName = document.getElementById('searchInput').value;
     const weatherData = await fetch
       (`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&units=metric&appid=e03b37fa6490c77bd8ba9fc061e935de`);
 
@@ -35,8 +33,15 @@ async function getWeather() {
   }
 }
 
-document.getElementById('searchButton').addEventListener('click', getWeather);
+document.getElementById('searchButton').addEventListener('click', () => {
+  const cityName = document.getElementById('searchInput').value;
+  getWeather(cityName);
+});
 document.getElementById('searchInput').addEventListener('keydown', (e) => {
-  e.key === 'Enter' ? getWeather() : null;
+  const cityName = document.getElementById('searchInput').value;
+  e.key === 'Enter' ? getWeather(cityName) : null;
 });
 
+window.addEventListener("DOMContentLoaded", () => {
+  getWeather();
+});
